@@ -9,3 +9,9 @@ Laravel offers a rich set of functionalities which incorporates the basic featur
 If you are familiar with Core PHP and Advanced PHP, Laravel will make your task easier. It saves a lot time if you are planning to develop a website from scratch. Moreover, a website built in Laravel is secure and prevents several web attacks.
 
 
+## Advantages of Laravel
+Laravel offers you the following advantages, when you are designing a web application based on it −
+
+* The web application becomes more scalable, owing to the Laravel framework.
+* Considerable time is saved in designing the web application, since Laravel reuses the components from other framework in developing web application.
+* It includes namespaces and interfaces, thus helps to organize and manage resources.
