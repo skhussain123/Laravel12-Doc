@@ -16,3 +16,60 @@ Laravel has a clean and flexible routing mechanism that allows you to easily def
 | `channels.php` | Laravel Echo and broadcasting channels             |
 
 
+## **Type of Routing*
+
+* Basic Routing
+* Route parameters
+* Named Routes
+
+
+
+### **Basic Routing**
+```bash
+use App\Http\Controllers\UserController;
+
+Route::get('/users', [UserController::class, 'index']);
+```
+This calls the index() method in UserController when /users is visited.
+
+
+### **Route Parameters**
+```bash
+Route::get('/user/{id}', function ($id) {
+    return "User ID: $id";
+});
+```
+**Optional:**
+```bash
+Route::get('/user/{name?}', function ($name = 'Guest') {
+    return $name;
+});
+```
+
+
+### **Named Routes**
+```bash
+Route::get('/profile', function () {
+    return 'Your profile';
+})->name('profile');
+
+$url = route('profile');
+```
+
+**Multiple Parameters:**
+```bash
+Route::get('/post/{id}/comment/{commentId}', function ($id, $commentId) {
+    return "Post $id, Comment $commentId";
+});
+```
+
+
+### **Grouping Routes**
+```bash
+Route::prefix('admin')->middleware('auth')->group(function () {
+    Route::get('/dashboard', function () {
+        return 'Admin Dashboard';
+    });
+});
+```
+
