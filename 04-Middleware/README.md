@@ -19,23 +19,23 @@ php artisan make:middleware CheckRole
 app/Http/Middleware/
 ```
 
-### Type of middleware
+### **Type of middleware**
 
-**Single middleware**
+**1: Single middleware**
 ```bash
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware('auth');
 ```
 
-**Multiple middleware**
+**2: Multiple middleware**
 ```bash
 Route::get('/settings', function () {
     // ...
 })->middleware(['auth', 'verified']);
 ```
 
-**Middleware Groups**
+**3: Middleware Groups**
 ```bash
 Route::middleware(['web'])->group(function () {
     Route::get('/', function () {
