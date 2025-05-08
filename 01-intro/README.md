@@ -9,7 +9,7 @@ Laravel offers a rich set of functionalities which incorporates the basic featur
 If you are familiar with Core PHP and Advanced PHP, Laravel will make your task easier. It saves a lot time if you are planning to develop a website from scratch. Moreover, a website built in Laravel is secure and prevents several web attacks.
 
 
-## Advantages of Laravel
+### Advantages of Laravel
 Laravel offers you the following advantages, when you are designing a web application based on it −
 
 * The web application becomes more scalable, owing to the Laravel framework.
@@ -17,7 +17,24 @@ Laravel offers you the following advantages, when you are designing a web applic
 * It includes namespaces and interfaces, thus helps to organize and manage resources.
 
 
-## Composer
+### Composer
 Composer is a tool which includes all the dependencies and libraries. It allows a user to create a project with respect to the mentioned framework (for example, those used in Laravel installation). Third party libraries can be installed easily with help of composer.
 
 All the dependencies are noted in composer.json file which is placed in the source folder.
+
+
+## **Features of Laravel**
+Laravel offers the following key features which makes it an ideal choice for designing web applications −
+
+
+### **Modularity**
+Laravel provides 20 built in libraries and modules which helps in enhancement of the application. Every module is integrated with Composer dependency manager which eases updates.
+
+### **Testability**
+Laravel includes features and helpers which helps in testing through various test cases. This feature helps in maintaining the code as per the requirements.
+
+### **Routing**
+Laravel provides a flexible approach to the user to define routes in the web application. Routing helps to scale the application in a better way and increases its performance.
+
+### **Configuration Management**
+A web application designed in Laravel will be running on different environments, which means that there will be a constant change in its configuration. Laravel provides a consistent approach to handle the configuration in an efficient way.
