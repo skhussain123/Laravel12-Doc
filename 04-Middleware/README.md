@@ -45,3 +45,45 @@ Route::middleware(['web'])->group(function () {
 ```
 
 
+### Custom Middleware**
+write the in handle method
+```bash
+  if (! $request->user() || $request->user()->role !== $role) {
+            abort(403, 'Unauthorized');
+        }
+
+        return $next($request);
+```
+
+**Middleware register**
+```bash
+<?php
+
+use App\Http\Middleware\User\Guard;
+use Illuminate\Foundation\Application;
+use Illuminate\Foundation\Configuration\Exceptions;
+use Illuminate\Foundation\Configuration\Middleware;
+
+return Application::configure(basePath: dirname(__DIR__))
+    ->withRouting(
+        web: __DIR__ . '/../routes/web.php',
+        commands: __DIR__ . '/../routes/console.php',
+        health: '/up',
+    )
+    ->withMiddleware(function (Middleware $middleware) {
+        $middleware->alias([
+            'check.user' => Guard::class,
+        ]);
+    })
+    ->withExceptions(function (Exceptions $exceptions) {
+        //
+    })->create();
+```
+
+**Apply Middleware**
+```bash
+Route::get('/admin', function () {
+    return 'Welcome Admin!';
+})->middleware('check.user');
+
+```
