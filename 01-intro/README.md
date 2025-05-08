@@ -15,3 +15,9 @@ Laravel offers you the following advantages, when you are designing a web applic
 * The web application becomes more scalable, owing to the Laravel framework.
 * Considerable time is saved in designing the web application, since Laravel reuses the components from other framework in developing web application.
 * It includes namespaces and interfaces, thus helps to organize and manage resources.
+
+
+## Composer
+Composer is a tool which includes all the dependencies and libraries. It allows a user to create a project with respect to the mentioned framework (for example, those used in Laravel installation). Third party libraries can be installed easily with help of composer.
+
+All the dependencies are noted in composer.json file which is placed in the source folder.
