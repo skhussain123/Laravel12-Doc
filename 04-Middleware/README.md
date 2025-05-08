@@ -13,3 +13,35 @@ Laravel includes a middleware that verifies whether the user of the application 
 ```bash
 php artisan make:middleware CheckRole
 ```
+
+**Location of Middleware**
+```bash
+app/Http/Middleware/
+```
+
+### Type of middleware
+
+**Single middleware**
+```bash
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware('auth');
+```
+
+**Multiple middleware**
+```bash
+Route::get('/settings', function () {
+    // ...
+})->middleware(['auth', 'verified']);
+```
+
+**Middleware Groups**
+```bash
+Route::middleware(['web'])->group(function () {
+    Route::get('/', function () {
+        return view('welcome');
+    });
+});
+```
+
+
