@@ -1,5 +1,5 @@
 # Laravel Routing (Latest Version: Laravel 12)
-Routing in Laravel is the system that maps URLs (like /login, /dashboard, etc.) to specific code—either a controller method or a closure—that handles the request and returns a response.
+Laravel routing is the mechanism that determines how your application responds to different HTTP requests (e.g., GET, POST, PUT, DELETE). It allows you to define application URLs and specify the logic that should be executed when a user accesses them. 
 
 Laravel has a clean and flexible routing mechanism that allows you to easily define:
 * Web routes for pages (views)

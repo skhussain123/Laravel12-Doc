@@ -11,6 +11,18 @@ Laravel offers a rich set of functionalities which incorporates the basic featur
 If you are familiar with Core PHP and Advanced PHP, Laravel will make your task easier. It saves a lot time if you are planning to develop a website from scratch. Moreover, a website built in Laravel is secure and prevents several web attacks.
 
 
+* Laravel was created by Taylor Otwell. 
+* The framework was first released in June 2011. 
+
+ 
+**Install and create laravel project** 
+
+* Composer global require laravel/installer 
+* Laravel new example-app 
+
+
+
+
 ### Advantages of Laravel
 Laravel offers you the following advantages, when you are designing a web application based on it −
 
@@ -59,3 +71,63 @@ Laravel uses Redis to connect to an existing session and general-purpose cache. 
 Laravel includes queue services like emailing large number of users or a specified Cron job. These queues help in completing tasks in an easier manner without waiting for the previous task to be completed.
 
 
+## **Laravel MVC Architecture Explained**
+Model – View – Controller
+This pattern separates your application logic into three layers to make code clean, scalable, and manageable.
+
+
+### **1. Model (app/Models/)**
+
+* Role: Handles all data logic and interaction with the database.
+* Represents a table in the database.
+* Each model corresponds to one table.
+* You use Eloquent ORM in Laravel to query data easily.
+
+```bash
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Model;
+
+class Product extends Model
+{
+    protected $fillable = ['name', 'price'];
+}
+```
+
+### **2. View (resources/views/)**
+
+* Role: Responsible for the UI (User Interface) — what the user sees.
+* Uses Blade templating engine (.blade.php).
+* Displays dynamic content passed by the controller.
+
+```bash
+<!-- resources/views/products/index.blade.php -->
+<h1>All Products</h1>
+@foreach ($products as $product)
+    <p>{{ $product->name }} - ${{ $product->price }}</p>
+@endforeach
+
+```
+
+
+### **3. Controller (app/Http/Controllers/)**
+* Role: Acts as a bridge between Model and View.
+* Receives requests
+* Fetches data using models
+* Passes data to views
+
+```bash
+namespace App\Http\Controllers;
+
+use App\Models\Product;
+use Illuminate\Http\Request;
+
+class ProductController extends Controller
+{
+    public function index()
+    {
+        $products = Product::all(); // Fetch data from Model
+        return view('products.index', compact('products')); // Pass to View
+    }
+}
+```
