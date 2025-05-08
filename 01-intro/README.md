@@ -38,3 +38,22 @@ Laravel provides a flexible approach to the user to define routes in the web app
 
 ### **Configuration Management**
 A web application designed in Laravel will be running on different environments, which means that there will be a constant change in its configuration. Laravel provides a consistent approach to handle the configuration in an efficient way.
+
+
+### **Schema Builder**
+Schema Builder maintains the database definitions and schema in PHP code. It also maintains a track of changes with respect to database migrations.
+
+### **Template Engine**
+Laravel uses the Blade Template engine, a lightweight template language used to design hierarchical blocks and layouts with predefined blocks that include dynamic content.
+
+
+### **Authentication**
+User authentication is a common feature in web applications. Laravel eases designing authentication as it includes features such as register, forgot password and send password reminders.
+
+### **Redis**
+Laravel uses Redis to connect to an existing session and general-purpose cache. Redis interacts with session directly.
+
+### **Queues**
+Laravel includes queue services like emailing large number of users or a specified Cron job. These queues help in completing tasks in an easier manner without waiting for the previous task to be completed.
+
+
