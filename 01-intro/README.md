@@ -14,6 +14,13 @@ If you are familiar with Core PHP and Advanced PHP, Laravel will make your task 
 * Laravel was created by Taylor Otwell. 
 * The framework was first released in June 2011. 
 
+Laravel currently supports the following 4 databases:
+
+* MySQL
+* PostgreSQL
+* SQLite
+* SQL Server
+
  
 **Install and create laravel project** 
 
