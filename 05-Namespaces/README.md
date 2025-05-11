@@ -7,10 +7,12 @@ use <namespace-name>;
 
 The default namespace used in Laravel is App, however a user can change the namespace to match with web application. Creating user defined namespace with artisan command is mentioned as follows −
 
-namespace App\Http\Controllers;
+```bash namespace App\Http\Controllers;
 
 php artisan app:name SocialNet
 namespace SocialNet\Http\Controllers;
+
+```
 
 Agar aap chahte ho ke app ka naam "SocialNet" ho ya aapki project/App ka naam reflect ho, to aap namespace change karte ho.
 
