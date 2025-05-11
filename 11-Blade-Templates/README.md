@@ -9,6 +9,19 @@ Blade is Laravel’s powerful and lightweight templating engine. It helps you wr
 When compared to other templating engines, Blade is unique in the following ways −
 ![App Screenshot](welcome_blade.jpg)
 
+
+### 1. Blade Files
+```bash
+resources/views/
+```
+
+Blade file extension hoti hai:
+```bash
+.blade.php
+```
+Example:
+resources/views/home.blade.php
+
 ### 2. Blade Syntax Basics
 | Task          | Blade Syntax              |
 | ------------- | ------------------------- |
