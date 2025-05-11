@@ -131,3 +131,9 @@ class ProductController extends Controller
     }
 }
 ```
+
+## Environment Configuration
+Environment variables are those which provide a list of web services to your web application. All the environment variables are declared in the .env file which includes the parameters required for initializing the configuration.
+
+By default, the .env file includes following parameters −
+
