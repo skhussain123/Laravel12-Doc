@@ -15,3 +15,22 @@ Logging is an important mechanism by which system can log errors that are genera
 ```
 
 You can see the generated log entries in storage/logs/laravel.log file.
+
+
+### Rendering Exceptions
+The render method is responsible for converting exceptions into HTTP responses. Laravel automatically renders appropriate error pages for common exceptions like 404 Not Found or 500 Internal Server Error.
+
+For custom exceptions, you can define how they should be rendered by overriding the render method in the Handler.php file.
+
+For example, to render a custom error page for a CustomException:
+```bash
+public function render($request, Throwable $exception)
+{
+    if ($exception instanceof CustomException) {
+        return response()->view('errors.custom', [], 500);
+    }
+
+    return parent::render($request, $exception);
+}
+
+```
