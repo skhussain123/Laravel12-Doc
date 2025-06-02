@@ -108,3 +108,94 @@ $posts = Post::where('is_published', true)->orderBy('created_at', 'desc')->get()
 | Relationships | Built-in methods for table relations    |
 
 
+
+### Query Builder vs Eloquent
+| Feature           | **Query Builder**                      | **Eloquent ORM**                        |
+| ----------------- | -------------------------------------- | --------------------------------------- |
+| **Definition**    | Fluent and low-level SQL query builder | High-level Active Record implementation |
+| **Approach**      | Array-based, manual                    | Object-oriented, model-based            |
+| **Performance**   | Slightly faster                        | Slightly slower (due to object mapping) |
+| **Readability**   | Closer to SQL                          | Cleaner and more expressive             |
+| **Relationships** | Manual joins required                  | Built-in relationship handling          |
+| **Return Type**   | Arrays                                 | Model objects                           |
+| **Use Case**      | When you need custom, complex SQL      | When you want clean, maintainable code  |
+
+
+### 1. Example: Fetch All Posts
+**Query Builder:**
+```bash
+$posts = DB::table('posts')->get();
+```
+
+**Eloquent:**
+```bash
+use App\Models\Post;
+$posts = Post::all();
+```
+
+
+###  2. Example: Insert Data
+
+**Query Builder:**
+```bash
+DB::table('posts')->insert([
+    'title' => 'New Post',
+    'body' => 'Post content here'
+]);
+```
+
+**Eloquent:**
+```bash
+Post::create([
+    'title' => 'New Post',
+    'body' => 'Post content here'
+]);
+```
+
+
+### 3. Example: Where & Conditions
+**Query Builder:**
+```bash
+$posts = DB::table('posts')
+    ->where('status', 'published')
+    ->orderBy('created_at', 'desc')
+    ->get();
+```
+
+**Eloquent:**
+```bash
+$posts = Post::where('status', 'published')
+    ->orderBy('created_at', 'desc')
+    ->get();
+```
+
+### 4. Example: Relationships
+**Query Builder:**
+
+```bash
+$comments = DB::table('comments')
+    ->where('post_id', 1)
+    ->get();
+
+```
+
+**Eloquent:**
+```bash
+$post = Post::find(1);
+$comments = $post->comments; // if hasMany relationship is defined
+
+```
+
+### 5. When to Use What
+
+| Scenario                                 | Use             |
+| ---------------------------------------- | --------------- |
+| You want fast, custom SQL queries        | ✅ Query Builder |
+| You want elegant, clean code             | ✅ Eloquent      |
+| You work with table joins manually       | ✅ Query Builder |
+| You work with models and relationships   | ✅ Eloquent      |
+| You need speed with minimal overhead     | ✅ Query Builder |
+| You want maintainability and scalability | ✅ Eloquent      |
+
+
+
