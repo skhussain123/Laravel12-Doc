@@ -85,17 +85,48 @@ $posts = Post::where('is_published', true)->orderBy('created_at', 'desc')->get()
 
 
 ### 6. Useful Eloquent Methods
-| Method            | Description                         |
-| ----------------- | ----------------------------------- |
-| `all()`           | Get all records                     |
-| `find(id)`        | Get record by ID                    |
-| `where()`         | Add conditions                      |
-| `create()`        | Create a record                     |
-| `update()`        | Update a record                     |
-| `delete()`        | Delete a record                     |
-| `with()`          | Eager load relationships            |
-| `firstOrCreate()` | Find or create                      |
-| `firstOrFail()`   | Get first or throw 404 if not found |
+Ye methods aap Models ke zariye use karte ho (jaise: User::where(...), User::create(...), etc.)
+Ye object-oriented aur expressive syntax provide karta hai.
+| Method                     | Description                                   |
+| -------------------------- | --------------------------------------------- |
+| `create()`                 | New record insert with mass assignment        |
+| `save()`                   | Record ko manually save karta hai             |
+| `update()`                 | Record update karta hai                       |
+| `delete()`                 | Record delete karta hai                       |
+| `first()`                  | Pehla result laata hai                        |
+| `get()`                    | Sab results laata hai                         |
+| `find(id)`                 | ID ke zariye record find karta hai            |
+| `firstOrCreate()`          | Record exist kare to laaye, warna insert kare |
+| `updateOrCreate()`         | Exist kare to update, warna create kare       |
+| `firstOrNew()`             | Exist kare to laaye, warna object banaye      |
+| `pluck()`                  | Sirf ek column ki values laata hai            |
+| `with()`                   | Eager loading (relations ke sath)             |
+| `has()`                    | Relation filter karne ke liye                 |
+| `whereHas()`               | Relation-based condition                      |
+| `belongsTo()`, `hasMany()` | Relationship define karte hain                |
+
+
+
+### 7. Query Builder Methods
+Ye methods aap DB facade ke through use karte ho (DB::table('users')->where(...), etc.)
+Ye lightweight aur direct SQL-like queries banata hai.
+
+| Method                             | Description                   |
+| ---------------------------------- | ----------------------------- |
+| `insert()`                         | Data insert karta hai         |
+| `update()`                         | Data update karta hai         |
+| `delete()`                         | Data delete karta hai         |
+| `select()`                         | Columns select karta hai      |
+| `where()`                          | Condition lagata hai          |
+| `get()`                            | Sab records laata hai         |
+| `first()`                          | Pehla record laata hai        |
+| `pluck()`                          | Ek column ki values laata hai |
+| `join()`                           | Table join karta hai          |
+| `orderBy()`                        | Sorting                       |
+| `limit()`                          | Limit set karta hai           |
+| `count()`                          | Count laata hai               |
+| `avg()`, `sum()`, `min()`, `max()` | Aggregates                    |
+
 
 
 
