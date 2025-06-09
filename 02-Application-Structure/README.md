@@ -2,7 +2,7 @@
 
 # 📁 Root-Level Directories
 * app/: Contains the core application code, including controllers, models, middleware, and service providers.
-* bootstrap/: Houses the app.php file, which bootstraps the framework, and a cache/ directory for performance optimization files.
+* bootstrap/: Isme app.php file hoti hai jo framework ko start karti hai, aur ek cache/ folder hota hai jo app ki performance behtar banata hai.
 * config/: Stores all configuration files for your application, such as app.php, database.php, and mail.php.
 * database/: Includes database migrations, model factories, and seeders. You can also place an SQLite database here.
 * public/: Contains the index.php file, the entry point for all requests, and assets like images, JavaScript, and CSS.
