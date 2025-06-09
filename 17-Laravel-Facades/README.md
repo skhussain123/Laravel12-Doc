@@ -4,6 +4,8 @@
 # Laravel - Facades
 In Laravel, facades provide a static interface to classes that are available in the application's service container. They serve as "static proxies" to underlying classes, offering a simple and expressive syntax while maintaining more testability and flexibility than traditional static methods.
 
+Laravel me Facades ek simple aur powerful feature hai jo aapko Laravel ke core classes ko shortcut ke zariye use karne ka tareeqa deta hai — bina manually object create kiye ya dependency inject kiye.
+
 ```bash
 use Illuminate\Support\Facades\Cache;
 
