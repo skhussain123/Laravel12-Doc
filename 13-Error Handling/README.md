@@ -34,3 +34,33 @@ public function render($request, Throwable $exception)
 }
 
 ```
+
+### Custom Error Page Banana
+Laravel me default error pages resources/views/errors/ folder me hote hain.
+**File: resources/views/errors/404.blade.php**
+```bash
+@extends('layouts.app')
+
+@section('content')
+    <h1>404 - Page Nahi Mili 😢</h1>
+    <p>Maaf karna, lekin ye page nahi mila.</p>
+@endsection
+```
+Aise hi aap 500.blade.php, 403.blade.php, 419.blade.php waghera bana sakte ho.
+
+### Summary Table:
+| Task               | Laravel Feature                |
+| ------------------ | ------------------------------ |
+| Error handle karna | `Handler.php`                  |
+| Custom error page  | `resources/views/errors/`      |
+| Validation error   | `$request->validate([...])`    |
+| Try-catch          | `try { ... } catch { ... }`    |
+| Logging            | `Log::error('msg');`           |
+| Debug mode         | `.env` file (`APP_DEBUG=true`) |
+
+
+### Debug Mode On/Off
+```bash
+APP_DEBUG=true  // Errors screen par full show honge
+APP_DEBUG=false // Errors ka generic message show hoga
+```
