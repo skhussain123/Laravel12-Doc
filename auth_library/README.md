@@ -8,6 +8,37 @@
 * Login, registration, forgot/reset password included.
 * Perfect for beginners and small-to-medium projects.
 
+#### Installation Process
+
+##### Breeze ko install karo via Composer
+```bash
+composer require laravel/breeze --dev
+```
+
+#####  Breeze ko install karo with Blade (default)
+```bash
+php artisan breeze:install
+```
+
+**Agar aap React ya Vue use karna chahte ho:**
+```bash
+php artisan breeze:install react
+# ya
+php artisan breeze:install vue
+
+```
+
+##### Frontend dependencies
+```bash
+npm install
+npm run dev
+```
+
+##### Migrations
+```bash
+php artisan migrate
+```
+
 
 ##### 2. ⚡ Laravel Jetstream
 
@@ -15,7 +46,7 @@
 * Includes 2FA, email verification, team management, API tokens.
 * Uses Livewire or Inertia.js (React/Vue).
 
-
+##### Installation Process
 ```bash
 composer require laravel/jetstream
 ```
@@ -34,7 +65,6 @@ npm run dev
 ```bash
 php artisan migrate
 ```
-
 
 ##### 3. 🔐 Laravel Fortify
 
