@@ -1,6 +1,8 @@
 # Laravel Routing (Latest Version: Laravel 12)
 Laravel routing is the mechanism that determines how your application responds to different HTTP requests (e.g., GET, POST, PUT, DELETE). It allows you to define application URLs and specify the logic that should be executed when a user accesses them. 
 
+Laravel routing ka matlab hai ke aap apne application ke URLs define karte ho aur batate ho ke kis URL par konsa controller/function run hoga.
+
 Laravel has a clean and flexible routing mechanism that allows you to easily define:
 * Web routes for pages (views)
 * API routes for APIs (stateless)
@@ -21,6 +23,7 @@ Laravel has a clean and flexible routing mechanism that allows you to easily def
 * Basic Routing
 * Route parameters
 * Named Routes
+* Group Routing
 
 
 
@@ -41,35 +44,26 @@ Route::get('/user/{id}', function ($id) {
 ```
 **Optional:**
 ```bash
-Route::get('/user/{name?}', function ($name = 'Guest') {
-    return $name;
-});
+Route::get('/user/{name?}', [UserController::class, 'index']);
 ```
 
 
 ### **Named Routes**
 ```bash
-Route::get('/profile', function () {
-    return 'Your profile';
-})->name('profile');
-
-$url = route('profile');
+Route::get('/user/{name?}', [UserController::class, 'index'])->name('profile');
 ```
 
 **Multiple Parameters:**
 ```bash
-Route::get('/post/{id}/comment/{commentId}', function ($id, $commentId) {
-    return "Post $id, Comment $commentId";
-});
+Route::post('submmit/{id}/comment/{commentId}', [FormController::class, 'submit']);
 ```
-
 
 ### **Grouping Routes**
 ```bash
-Route::prefix('admin')->middleware('auth')->group(function () {
-    Route::get('/dashboard', function () {
-        return 'Admin Dashboard';
-    });
+Route::prefix('admin')->group(function () {
+    Route::get('/dashboard', [AdminController::class, 'dashboard']);
+    Route::get('/users', [AdminController::class, 'users']);
 });
+
 ```
 
