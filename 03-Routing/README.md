@@ -24,6 +24,7 @@ Laravel has a clean and flexible routing mechanism that allows you to easily def
 * Route parameters
 * Named Routes
 * Group Routing
+* Optional parameters
 
 
 
