@@ -14,6 +14,8 @@ namespace SocialNet\Http\Controllers;
 
 ```
 
+* Laravel me namespace ka use code ko organize krne ke liye hota hai, jese:
+
 Agar aap chahte ho ke app ka naam "SocialNet" ho ya aapki project/App ka naam reflect ho, to aap namespace change karte ho.
 
 1. Laravel ke andar har controller, model, middleware ya class apne specific folder me hoti hai. namespace batata hai ke ye class kis folder (ya module) se belong karti hai.
