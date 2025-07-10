@@ -16,6 +16,17 @@ Laravel offers several options (drivers) to store session data:
 * array – used for testing; data is not stored between requests
 
 
+| Driver             | Description                                                                                              | Best Use Case                                                  |
+| ------------------ | -------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------- |
+| `file` *(default)* | Session data ko storage path (usually `storage/framework/sessions`) me files ki form me store karta hai. | Local dev ya choti apps                                        |
+| `cookie`           | Pura session data browser ke cookie me store hota hai (encrypted).                                       | Stateless apps ya lightweight session data                     |
+| `database`         | Session data ek specific database table me store hota hai (usually `sessions` table).                    | Jab aapko centralized session chahiye multiple servers ke liye |
+| `apc`              | APC (Alternative PHP Cache) ko use karta hai (server-side cache).                                        | Jab APC enabled ho aur fast access chahiye                     |
+| `memcached`        | Session data Memcached me store hota hai — ek in-memory key-value store.                                 | Large scale, high-performance apps                             |
+| `redis`            | Session data Redis me store hota hai — fast, scalable, and durable.                                      | High-concurrency ya distributed apps                           |
+| `array`            | Session sirf memory me store hota hai aur next request me remove ho jata hai.                            | Testing purpose only (not persistent)                          |
+
+
 ### Default Driver
 By default, Laravel uses the file driver, because it’s simple and lightweight.
 ```bash
