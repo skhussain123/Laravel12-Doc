@@ -14,17 +14,20 @@ Cookie::queue('user_name', 'check', 60);
 
 ```
 
-### 2. Getting a Cookie (Cookie lena)
+### 2. Update
 ```bash
-public function getCookie(Request $request) {
-    $name = $request->cookie('user_name');
-    return 'Cookie Value: ' . $name;
-}
-
+ Cookie::queue('user_name', 'UpdatedHussain', 60); // old value overwrite ho jayegi
 ```
 
 ### 3. Deleting a Cookie (Cookie delete karna)
 ```bash
-return response('Cookie Deleted')
-            ->cookie('user_name', '', -1);
+Cookie::queue(Cookie::forget('user_name'));
 ```
+
+| Operation | Code                                         | Explanation                  |
+| --------- | -------------------------------------------- | ---------------------------- |
+| Create    | `Cookie::queue('name', 'value', minutes)`    | Browser me cookie set krna   |
+| Read      | `$request->cookie('name')`                   | Cookie ki value lena         |
+| Update    | `Cookie::queue('name', 'newValue', minutes)` | Same name se dobara set krdo |
+| Delete    | `Cookie::queue(Cookie::forget('name'))`      | Cookie ko delete krna        |
+
