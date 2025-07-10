@@ -7,11 +7,7 @@ Laravel automatically encrypts and decrypts cookies to keep data safe. You donâ€
 
 ### 1. Set a Cookie
 ```bash
-return response('Hello User')
-            ->cookie('user_name', 'Ali', 60); // 60 minutes
-
-Cookie::queue('user_name', 'check', 60);
-
+ Cookie::queue('user_name', 'Hussain', 60); // 60 minutes
 ```
 
 ### 2. Update
