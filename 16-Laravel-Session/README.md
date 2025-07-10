@@ -86,6 +86,11 @@ Session::flash('success', 'User created successfully!');
 Session::regenerate();
 ```
 
+### 8. Update Session
+```bash
+session()->put('user_name', 'UpdatedHussain');
+```
+
 | Task             | Syntax                           |
 | ---------------- | -------------------------------- |
 | Store session    | `Session::put('key', 'value')`   |
