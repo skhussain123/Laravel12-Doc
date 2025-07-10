@@ -2,7 +2,7 @@
 
 
 #  Laravel Eloquent ORM (Object-Relational Mapping)
-Eloquent ORM is Laravel’s built-in way to interact with your database using PHP objects instead of raw SQL queries. It simplifies CRUD operations and handles relationships between tables easily.
+Eloquent ORM Laravel me ek aisa system hai jo database tables ko PHP classes ke objects ke form me represent karta hai — taake aap SQL likhne ke bajaye PHP code ke zariye data access, insert, update, delete kar sako.
 
 ### 1. What is Eloquent?
 Eloquent maps database tables to PHP classes (Models), and rows to objects.
