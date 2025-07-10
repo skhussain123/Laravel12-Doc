@@ -60,6 +60,11 @@ php artisan migrate
 | `php artisan migrate:status`                    | See which migrations have run             |
 | `php artisan make:model Post -m`                | Create a new migration   with model       |
 
+7. php artisan make:model User -mcr (Create model migration with Controller)
+8. php artisan migrate:refresh (tables delete hoti hain),(tables dubara banti hain)
+
+
+
 
 
 
